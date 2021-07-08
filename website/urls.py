@@ -21,6 +21,6 @@ from web3auth import urls as web3auth_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', acc.index,  name='index'),
+    path('', acc.index,  name='index'),
     url(r'^', include(web3auth_urls))
 ]
