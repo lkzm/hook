@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import account
+import account.views as acc
 from web3auth import urls as web3auth_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', account.views.index,  name='index'),
+    path('/', acc.index,  name='index'),
     url(r'^', include(web3auth_urls))
 ]
