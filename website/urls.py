@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import account.views as acc
+from django.conf.urls import url, include
 from web3auth import urls as web3auth_urls
 
 urlpatterns = [
