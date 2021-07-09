@@ -1,36 +1,20 @@
 {% extends 'base.html' %}
-
-{% load static %}
-
-
-{% block content %}
-
-		<div id="wrapper">
-            <div id="bg: url('{% static 'account/css/images/bg.jpg' %} ')"></div>
-
-			<div id="overlay"></div>
-			<div id="main">
-
-				<!-- Header -->
-					<header id="header">
-						<h1>Hook Token</h1>
-						<p>Coming Soon</p>
-						<nav>
-							<ul>
-								<li><a href="http://35.235.67.243/" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
-
-
-
-
-			</div>
-		</div>
+{% block title %}
+Hook Token
 {% endblock %}
+{% block header %}
+                                <h1>Hook Token</h1>
+                                <p>Coming soon!<br />
+	                            </p>
+{% endblock %}
+ {% block form %}
+                                {% csrf_token %}
+
+
+    <button type="button" onclick="startLogin()">Login</button>
+
+
+				{% endblock %}
+
 
 <script src="{% static 'account/web3auth/web3auth.js' %}"></script>

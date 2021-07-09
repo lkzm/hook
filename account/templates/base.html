@@ -1,26 +1,69 @@
+<!DOCTYPE HTML>
 {% load static %}
-<head>
-		<title>Aerial by HTML5 UP</title>
+<html>
+	<head>
+		<title>{% block title %} Hook {% endblock %}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href={% static 'account/css/main.css' %}/>
-		<noscript><link rel="stylesheet" href={% static 'account/css/noscript.css' %} /></noscript>
+		<link rel="stylesheet" href="{% static 'account/assets/css/main.css' %}" />
 	</head>
-<body class="is-preload">
+	<body class="is-preload">
 
-{% block content %}
+		<!-- Header -->
+			<header id="header">
+				{% block header %}
+                    <h1>Send Us Your Mix</h1>
+				<p>Upload your mix blah blah<br />
+				blah</p>
+				{% endblock %}
+			</header>
 
 
-{% endblock %}
+			<form id="signup-form" method="post" action="" enctype="multipart/form-data" novalidate >
+				{% block form %}
+				{% csrf_token %}
+				<table>
+        			{{ form }}
+        			</table>
+				{% endblock %}
+				<input type="submit" value="Submit" />
+			</form>
 
-        <script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-</body>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                        <li><a href="" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+                                        <li><a href="" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+                                        <li><a href="" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; SoundFrequencies.</li>
+				</ul>
+			</footer>
 
-<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy;Hook Token</span>
-					</footer>
+		<!-- Scripts -->
+			<script>
+                                var settings = {
+
+                                        // Images (in the format of 'url': 'alignment').
+                                                images: {
+                                                        "{% static 'backgrounds/bg01.jpeg' %}" : 'center',
+                                                        "{% static 'backgrounds/bg02.jpeg' %}" :'center',
+                                                        "{% static 'backgrounds/bg03.jpeg' %}" : 'center',
+                                                        "{% static 'backgrounds/bg04.jpeg' %}" : 'center',
+                                                        "{% static 'backgrounds/bg05.jpeg' %}" : 'center',
+							                    },
+
+                                        // Delay.
+                                                delay: 6000
+
+                                };
+                        </script>
+			<script src="{% static 'account/assets/js/main.js' %}"></script>
+
+
+	</body>
+</html>
+
