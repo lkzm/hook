@@ -26,6 +26,7 @@
         			{{ form }}
         			</table>
 				{% endblock %}
+             <button type="submit" onclick="startLogin()">Login</button>
 				<input type="submit" value="Submit" />
 			</form>
 
@@ -62,6 +63,7 @@
                                 };
                         </script>
 			<script src="{% static 'account/assets/js/main.js' %}"></script>
+            <script src="{% static 'account/web3auth/web3auth.js' %}"></script>
 
 
 	</body>
